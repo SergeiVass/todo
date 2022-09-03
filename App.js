@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -11,7 +10,6 @@ import {
   View,
 } from 'react-native'
 import CalendarPicker from 'react-native-calendar-picker'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import Task from './components/Task'
 
 const App = () => {
