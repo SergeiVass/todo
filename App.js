@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -10,12 +11,12 @@ import {
   View,
 } from 'react-native'
 import CalendarPicker from 'react-native-calendar-picker'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import Task from './components/Task'
 
 const App = () => {
   const [task, setTask] = useState()
   const [taskItems, setTaskItems] = useState([])
-  const [DateChange, onDateChange] = useState()
 
   const handleAddTask = () => {
     Keyboard.dismiss()
@@ -28,8 +29,6 @@ const App = () => {
     itemsCopy.splice(index, 1)
     setTaskItems(itemsCopy)
   }
-
-
 
   return (
     <View style={styles.container}>
@@ -82,7 +81,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#DEF2F1',
   },
   tasksWrapper: {
-    paddingTop: 50,
+    // paddingTop: 10,
     paddingHorizontal: 10,
   },
   sectionTitle: {
